@@ -46,8 +46,8 @@ jobs:
       uses: forallsecure/mcode-action@v1
       with:
         mayhem-token: ${{ secrets.MAYHEM_TOKEN }}
-        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/test_fuzz.mayhemfile
-          --cmd '/out/test_fuzz.pkg' --env LD_PRELOAD=/out/sanitizer_with_fuzzer.so
+        args: --image ${{ steps.meta.outputs.tags }} --file mayhem/nonsense_fuzz.mayhemfile
+          --cmd '/out/nonsense_fuzz.pkg' --env LD_PRELOAD=/out/sanitizer_with_fuzzer.so
           --env ASAN_OPTIONS=symbolize=1:external_symbolizer_path=/out/llvm-symbolizer:detect_leaks=0
           --libfuzzer True
           --duration 1200

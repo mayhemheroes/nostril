@@ -23,8 +23,8 @@ RUN pip3 install --upgrade pip
 
 WORKDIR nostril
 
-COPY mayhem/build.sh mayhem/test_fuzz.py $SRC/
+COPY mayhem/build.sh mayhem/nonsense_fuzz.py $SRC/
 
 ENV FUZZING_LANGUAGE=python SANITIZER=address FUZZING_ENGINE=libfuzzer
 RUN compile
-RUN chmod +x /out/test_fuzz.pkg
+RUN chmod +x /out/nonsense_fuzz.pkg

@@ -1,0 +1,4 @@
+project: nostril
+target: nonsense_fuzz
+cmds:
+- cmd: /out/nonsense_fuzz.pkg

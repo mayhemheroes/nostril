@@ -20,4 +20,4 @@ pip3 cache purge
 pip3 install .
 
 cd $SRC
-compile_python_fuzzer test_fuzz.py
+compile_python_fuzzer nonsense_fuzz.py
