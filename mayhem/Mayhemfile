@@ -1,0 +1,17 @@
+# Mayhem target: nostril nonsense-string detector (Atheris/libFuzzer harness).
+# The cmd binary is the compiled ELF launcher that drives mayhem/nonsense_fuzz.py; Atheris
+# instruments the nostril package so the run records coverage (edges).
+# Target name `nonsense_fuzz` is the historical Mayhem target name — do not rename.
+project: nostril
+target: nonsense_fuzz
+
+# Benign seed strings (from upstream's test cases) that exercise the full scoring
+# path without tripping the known ngram TypeError, so coverage collection has a
+# non-crashing optimized set to replay.
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/nonsense_fuzz/testsuite
+
+cmds:
+  - cmd: /mayhem/nonsense_fuzz
+    libfuzzer: true
